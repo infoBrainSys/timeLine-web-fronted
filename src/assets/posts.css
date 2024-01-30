@@ -1,0 +1,158 @@
+.postsBox {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  /*
+    单个帖子样式设计
+  */
+}
+.postsBox .post {
+  width: 400px;
+  height: 85%;
+  background-color: white;
+  margin: 30px;
+  border-radius: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 3px 5px #ccc;
+  /*
+      TODO
+      文章内容样式
+    */
+}
+.postsBox .post .avatarBox {
+  position: absolute;
+  left: 40px;
+  top: -25px;
+  border: 5px solid white;
+  border-radius: 50px;
+  display: flex;
+  animation: avatarRotateLeft 0.3s;
+}
+.postsBox .post .avatarBox .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+.postsBox .post .avatarBox:hover {
+  animation: avatarRotateRight 0.3s;
+}
+.postsBox .post .postPicBox {
+  width: 380px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+}
+.postsBox .post .postPicBox .postPic {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.postsBox .post .authorDateBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  user-select: none;
+  font-weight: 600;
+}
+.postsBox .post .authorDateBox .authorBox {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.postsBox .post .authorDateBox .authorBox a > p {
+  margin: 0 0 0 10px;
+  padding: 0;
+  text-decoration: none;
+}
+.postsBox .post .authorDateBox .dateBox {
+  margin-right: 20px;
+  color: #3b3e5a;
+}
+.postsBox .post .postTitle {
+  width: 100%;
+  margin: 20px 0 0 30px;
+}
+.postsBox .post .postTitle a {
+  color: black;
+}
+.postsBox .post .postTitle a span {
+  font-weight: 900;
+  font-size: 20px;
+}
+.postsBox .post .postTitle .lineUnderTitle {
+  border: 2px solid #f7ac68;
+  width: 5%;
+  border-radius: 30px;
+  transition: all 0.3s ease-out;
+}
+.postsBox .post .postTitle:hover .lineUnderTitle {
+  width: 30%;
+  transition: all 0.3s ease-in;
+}
+.postsBox .post .textEllipsis {
+  margin: 0 40px 20px 40px;
+  height: 260px;
+  cursor: text;
+  overflow: hidden;
+}
+.postsBox .post .textEllipsis p {
+  color: #3b3e5a;
+  text-indent: 1.5em;
+  text-align: justify;
+}
+.postsBox .post .lineUnderContent {
+  border: 1px solid rgba(59, 62, 90, 0.1);
+  border-radius: 20px;
+  width: 80%;
+}
+.postsBox .post .postBottom {
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 22px;
+  color: #ed6b5a;
+}
+.postsBox .post .postBottom .like a,
+.postsBox .post .postBottom .comment a,
+.postsBox .post .postBottom .share a {
+  color: #ed6b5a;
+}
+.postsBox .post .postBottom .like a span,
+.postsBox .post .postBottom .comment a span,
+.postsBox .post .postBottom .share a span {
+  margin-left: 10px;
+}
+.postsBox .post .postBottom .liked {
+  display: none;
+}
+@keyframes avatarRotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes avatarRotateLeft {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=posts.css.map */

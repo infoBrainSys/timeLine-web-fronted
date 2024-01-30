@@ -1,0 +1,154 @@
+@fontSize:30px;
+@transitionDuration: .3s;
+
+/*
+  menu-box 注释...
+*/
+.menu-box{
+  background-color: #3b3e5a;
+  width: 100px; // 原大小
+  //width: 500px; // hover 后大小
+  height: 100vh;
+  border-radius: 0 40px 40px 0;
+  overflow: hidden;
+  transition: all @transitionDuration ease-out;
+
+  // 设置 emoji-box的显示，动画在父元素的 hover 执行
+  .emoji-box{
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    color: white;
+
+    a{
+      text-decoration: none;
+      color: inherit;
+      // 默认显示 smile 图标
+      .fa-face-smile{
+        display: block;
+      }
+
+      // 默认关闭 wink 图标
+      .fa-face-grin-wink{
+        display: none;
+      }
+    }
+  }
+
+  // 设置 form-item 属性大小
+  /*
+    登录、注册的 form 表单卡片都在这个样式里
+  */
+  // 登录表单
+  .form-card{
+    display: none;
+    width: 300px;
+    height: auto;
+    background-color: white;
+    border-radius: 30px;
+    margin: 0 auto;
+    user-select: none;
+
+    .login-form, .register-form{
+      display: flex;
+      flex-direction: column;
+      margin: 30px;
+
+      .login-form-title, .register-form-title{
+        font-size: 30px;
+        font-weight: 900;
+      }
+
+      .login-form-title,input,button,.register-form-title{
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 10px;
+        outline: none;
+      }
+
+      input{
+        background-color: #f0f0f0;
+      }
+
+      button{
+        color: white;
+        background-color: #ed6b5a;
+        cursor: pointer;
+      }
+
+      & button:nth-last-child(1){
+        background-color: white;
+        border: 1px solid #ed6b5a;
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      p{
+        font-size: 13px;
+        margin: 10px auto;
+
+        a{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+
+  // menu-box 所有 hover 设计在这
+  &:hover{
+    width: 600px;
+    transition: all @transitionDuration ease;
+
+    // hover emoji 效果
+    .emoji-box {
+      .fa-face-grin-wink {
+        animation: emojiJitter .3s ;
+        display: block;
+      }
+
+      .fa-face-smile{
+        display: none;
+      }
+    }
+
+    // hover 表单效果
+    .form-card {
+      display: block;
+      animation: formScale @transitionDuration;
+    }
+  }
+}
+
+@keyframes emojiJitter {
+  0%{
+    transform: scale(1);
+  }
+
+  30%{
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  60%{
+    transform: scale(1.2) rotate(-10deg);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes formScale {
+  0%{
+    transform: scale(.4);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}

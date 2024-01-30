@@ -1,0 +1,135 @@
+/*
+  menu-box 注释...
+*/
+.menu-box {
+  background-color: #3b3e5a;
+  width: 100px;
+  height: 100vh;
+  border-radius: 0 40px 40px 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  /*
+    登录、注册的 form 表单卡片都在这个样式里
+  */
+}
+.menu-box .emoji-box {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  color: white;
+}
+.menu-box .emoji-box a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu-box .emoji-box a .fa-face-smile {
+  display: block;
+}
+.menu-box .emoji-box a .fa-face-grin-wink {
+  display: none;
+}
+.menu-box .form-card {
+  display: none;
+  width: 300px;
+  height: auto;
+  background-color: white;
+  border-radius: 30px;
+  margin: 0 auto;
+  user-select: none;
+}
+.menu-box .form-card .login-form,
+.menu-box .form-card .register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.menu-box .form-card .login-form .login-form-title,
+.menu-box .form-card .register-form .login-form-title,
+.menu-box .form-card .login-form .register-form-title,
+.menu-box .form-card .register-form .register-form-title {
+  font-size: 30px;
+  font-weight: 900;
+}
+.menu-box .form-card .login-form .login-form-title,
+.menu-box .form-card .register-form .login-form-title,
+.menu-box .form-card .login-form input,
+.menu-box .form-card .register-form input,
+.menu-box .form-card .login-form button,
+.menu-box .form-card .register-form button,
+.menu-box .form-card .login-form .register-form-title,
+.menu-box .form-card .register-form .register-form-title {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  outline: none;
+}
+.menu-box .form-card .login-form input,
+.menu-box .form-card .register-form input {
+  background-color: #f0f0f0;
+}
+.menu-box .form-card .login-form button,
+.menu-box .form-card .register-form button {
+  color: white;
+  background-color: #ed6b5a;
+  cursor: pointer;
+}
+.menu-box .form-card .login-form button:nth-last-child(1),
+.menu-box .form-card .register-form button:nth-last-child(1) {
+  background-color: white;
+  border: 1px solid #ed6b5a;
+  color: black;
+  margin-bottom: 20px;
+}
+.menu-box .form-card .login-form p,
+.menu-box .form-card .register-form p {
+  font-size: 13px;
+  margin: 10px auto;
+}
+.menu-box .form-card .login-form p a,
+.menu-box .form-card .register-form p a {
+  cursor: pointer;
+}
+.menu-box:hover {
+  width: 600px;
+  transition: all 0.3s ease;
+}
+.menu-box:hover .emoji-box .fa-face-grin-wink {
+  animation: emojiJitter 0.3s;
+  display: block;
+}
+.menu-box:hover .emoji-box .fa-face-smile {
+  display: none;
+}
+.menu-box:hover .form-card {
+  display: block;
+  animation: formScale 0.3s;
+}
+@keyframes emojiJitter {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes formScale {
+  0% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*# sourceMappingURL=menu.css.map */

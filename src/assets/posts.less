@@ -1,0 +1,172 @@
+@transitionDuration: 0.3s;
+
+.postsBox{
+  width: 100%;
+  height: 70%;
+  //background-color: #ed6b5a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+
+  /*
+    单个帖子样式设计
+  */
+  .post{
+    width: 400px; // 规定帖子的宽度
+    height: 85%;
+    background-color: white;
+    margin: 30px;
+    border-radius: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 3px 5px #ccc;
+
+    // 作者头像样式设计
+    .avatarBox{
+      position: absolute;
+      left: 40px;
+      top: -25px;
+      border: 5px solid white;
+      border-radius: 50px;
+      display: flex;
+      animation: avatarRotateLeft @transitionDuration;
+
+      .avatar{
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+      }
+
+      &:hover {
+        animation: avatarRotateRight @transitionDuration;
+      }
+    }
+
+    .postPicBox{
+      width:380px;
+      height: 200px;
+      margin: 10px;
+      border-radius: 35px;
+      overflow: hidden;
+      position: relative;
+
+      // 图片在盒子内部居中对齐
+      .postPic{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .authorDateBox{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      user-select: none;
+      font-weight: 600;
+
+      .authorBox{
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        a>p{
+          margin: 0 0 0 10px;
+          padding: 0;
+          text-decoration: none;
+        }
+      }
+      .dateBox{
+        margin-right: 20px;
+        color: #3b3e5a;
+      }
+    }
+
+    // 文章标题样式
+    .postTitle{
+      width: 100%;
+      margin: 20px 0 0 30px;
+
+      a{
+        color: black;
+        span{
+          font-weight: 900;
+          font-size: 20px;
+        }
+      }
+
+      .lineUnderTitle{
+        border: 2px solid #f7ac68;
+        width: 5%;
+        border-radius: 30px;
+        transition: all .3s ease-out;
+      }
+
+      &:hover .lineUnderTitle{
+        width: 30%;
+        transition: all .3s ease-in
+      }
+    }
+
+    /*
+      TODO
+      文章内容样式
+    */
+    .textEllipsis{
+      margin: 0 40px 20px 40px;
+      height: 260px;
+      cursor: text;
+      overflow: hidden;
+        p{
+          color: #3b3e5a;
+          text-indent: 1.5em;
+          text-align: justify;
+        }
+    }
+
+    .lineUnderContent{
+      border: 1px solid rgba(59, 62, 90, 0.1);
+      border-radius: 20px;
+      width: 80%;
+    }
+
+    .postBottom{
+      width: 80%;
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 22px;
+      color: #ed6b5a;
+
+      .like, .comment, .share{
+        a{
+          color: #ed6b5a;
+          span{
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .liked{
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes avatarRotateRight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes avatarRotateLeft {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
